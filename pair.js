@@ -56,27 +56,27 @@ router.get('/', async (req, res) => {
                     const credsPath = path.join(tempDir, 'creds.json');
                     const sessionData = fs.readFileSync(credsPath, 'utf8');
                     const base64 = Buffer.from(sessionData).toString('base64');
-                    const sessionId = "SOURAJIT-AI~" + base64;
+                    const sessionId = "ITACHI-AI~" + base64;
 
                     await sock.sendMessage(sock.user.id, { text: sessionId });
 
                     const successMsg = {
                         text:
-                            `🚀 *SOURAJIT-AI Session Created!*\n\n` +
+                            `🚀 *ITACHI-AI Session Created!*\n\n` +
                             `▸ *Never share* your session ID\n` +
                             `▸ Join our WhatsApp Channel\n` +
                             `▸ Report bugs on GitHub\n\n` +
-                            `_Powered by SOURAJIT-AI'\n\n` +
+                            `_Powered by ITACHI-AI'\n\n` +
                             `🔗 *Useful Links:*\n` +
-                            `▸ GitHub: https://github.com/rdx690/SOURAJIT-AI\n` +
-                            `▸ https://whatsapp.com/channel/0029VbAu0IeJENy3tYYZK52L`,
+                            `▸ GitHub: https://github.com/rdx690/ITACHI-AI\n` +
+                            `▸ https://whatsapp.com/channel/0029VbBVg1T89inpO324342P`,
                         contextInfo: {
                             mentionedJid: [sock.user.id],
                             forwardingScore: 1000,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: "120363401686230159@newsletter",
-                                newsletterName: "SOURAJIT-AI",
+                                newsletterJid: "120363421562914957@newsletter",
+                                newsletterName: "ITACHI-AI",
                                 serverMessageId: 143
                             }
                         }
@@ -106,7 +106,7 @@ router.get('/', async (req, res) => {
 
         if (!sock.authState.creds.registered) {
             await delay(1500);
-            const pairingCode = await sock.requestPairingCode(phoneNumber, "SOURAJIT");
+            const pairingCode = await sock.requestPairingCode(phoneNumber, "ITACHIAI");
             if (!res.headersSent) {
                 return res.send({ code: pairingCode });
             }
